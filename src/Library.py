@@ -1,43 +1,26 @@
-from src.Book import Book
-from src.User import User
-
-
-class Library:
-    def __init__(self):
-        self.__books = []
-        self.__users = []
-        self.__checked_out_books = []
-        self.__checked_in_books = []
+class User:
+    def __init__(self, dni: int, name: str, number_of_checkouts: int = 0, number_of_checkins: int = 0):
+        self.__dni = dni
+        self.__name = name
+        self.__number_of_checkouts = number_of_checkouts
+        self.__number_of_checkins = number_of_checkins
 
     # Getters
-    def get_books(self):
-        return self.__books
+    def get_dni(self) -> int:
+        return self.__dni
 
-    def get_users(self):
-        return self.__users
+    def get_name(self) -> str:
+        return self.__name
 
-    def get_checked_out_books(self):
-        return self.__checked_out_books
+    def get_number_of_checkouts(self) -> int:
+        return self.__number_of_checkouts
 
-    def get_checked_in_books(self):
-        return self.__checked_in_books
+    def get_number_of_checkins(self) -> int:
+        return self.__number_of_checkins
 
-    # 1.1 Add Book
-    def add_book(self, isbn, title, author):
-        pass
+    # Setters
+    def increment_checkouts(self) -> None:
+        self.__number_of_checkouts += 1
 
-    # 1.2 List All Books
-    def list_all_books(self):
-        pass
-
-    # 2.1 Check out book
-    def check_out_book(self, isbn, dni, due_date):
-        pass
-
-    # 2.2 Check in book
-    def check_in_book(self, isbn, dni, returned_date):
-        pass
-
-    # Utils
-    def add_user(self, dni, name):
-        pass
+    def increment_checkins(self) -> None:
+        self.__number_of_checkins += 1
